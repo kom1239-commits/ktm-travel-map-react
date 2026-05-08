@@ -1,62 +1,67 @@
-import { useEffect } from 'react';
-import { MapContainer, TileLayer, useMap } from 'react-leaflet';
-import RouteLayer from './RouteLayer.jsx';
-import PlaceMarker from './PlaceMarker.jsx';
 import './KTMMap.css';
 
-const TILE_URL = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-const TILE_ATTRIBUTION = '© OpenStreetMap';
-const DEFAULT_CENTER = [43.05, 77.85];
-const DEFAULT_ZOOM = 8;
+/*
+ * Static UI prototype — Leaflet temporarily disabled.
+ *
+ * Renders only a placeholder background plus a simple inline SVG
+ * (yellow route + colored dot markers + labels) at fixed positions
+ * so the rest of the layout (cards, top bar, bottom nav, FAB) can
+ * be tuned against the reference image without map interference.
+ *
+ * Re-attach Leaflet here once the static layout is approved —
+ * RouteLayer.jsx and PlaceMarker.jsx are untouched and ready to
+ * import back in.
+ */
 
-// Reserved space for floating UI so the route never sits behind cards.
-// Top: TopBar(56) + status row(56) + gaps. Bottom: PlaceSheet + TripSummary
-// + BottomNav stack.
-const FIT_PADDING_TOP_LEFT = [40, 140];
-const FIT_PADDING_BOTTOM_RIGHT = [40, 320];
+const PIN_COLORS = {
+  city: '#0E2D50',
+  mountain: '#2FA35A',
+  canyon: '#B76A26',
+  lake: '#248C9B',
+};
 
-function FitToRoute({ coords }) {
-  const map = useMap();
-  useEffect(() => {
-    if (!coords?.length) return;
-    map.fitBounds(coords, {
-      paddingTopLeft: FIT_PADDING_TOP_LEFT,
-      paddingBottomRight: FIT_PADDING_BOTTOM_RIGHT,
-      animate: false,
-    });
-  }, [map, coords]);
-  return null;
-}
+// Hand-placed positions (SVG coords inside viewBox 0 0 390 844)
+// — purely visual, not geographic. Tuned to match reference image.
+const STATIC_PINS = [
+  { id: 'almaty',    x: 110, y: 250, type: 'city',     name: 'Almaty',        ko: '알마티' },
+  { id: 'chimbulak', x: 244, y: 198, type: 'mountain', name: 'Chimbulak',     ko: '침블락' },
+  { id: 'kolsai',    x: 308, y: 268, type: 'lake',     name: 'Kolsai Lakes',  ko: '콜사이 호수' },
+  { id: 'kaindy',    x: 286, y: 332, type: 'lake',     name: 'Kaindy Lake',   ko: '카인디 호수' },
+  { id: 'charyn',    x: 144, y: 372, type: 'canyon',   name: 'Charyn Canyon', ko: '차른캐년', selected: true },
+];
 
-export default function KTMMap({
-  places,
-  routeCoords,
-  selectedPlaceId,
-  onSelectPlace,
-}) {
+const ROUTE_PATH = STATIC_PINS
+  .map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x},${p.y}`)
+  .join(' ');
+
+export default function KTMMap() {
   return (
-    <MapContainer
-      className="ktm-map"
-      center={DEFAULT_CENTER}
-      zoom={DEFAULT_ZOOM}
-      minZoom={6}
-      maxZoom={14}
-      zoomControl={false}
-      attributionControl={false}
-    >
-      <TileLayer url={TILE_URL} attribution={TILE_ATTRIBUTION} />
+    <div className="ktm-map" aria-label="map placeholder">
+      <svg
+        className="ktm-map-svg"
+        viewBox="0 0 390 844"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <path d={ROUTE_PATH} className="ktm-map-route" />
 
-      <FitToRoute coords={routeCoords} />
-      <RouteLayer coords={routeCoords} />
-
-      {places.map((place) => (
-        <PlaceMarker
-          key={place.id}
-          place={place}
-          selected={place.id === selectedPlaceId}
-          onSelect={onSelectPlace}
-        />
-      ))}
-    </MapContainer>
+        {STATIC_PINS.map((pin) => (
+          <g key={pin.id} transform={`translate(${pin.x}, ${pin.y})`}>
+            <circle
+              r={pin.selected ? 12 : 10}
+              fill={PIN_COLORS[pin.type] || '#333'}
+              stroke="#fff"
+              strokeWidth={2}
+              className={pin.selected ? 'ktm-map-pin-selected' : ''}
+            />
+            <text x={16} y={2} className="ktm-map-pin-label-en">
+              {pin.name}
+            </text>
+            <text x={16} y={14} className="ktm-map-pin-label-ko">
+              {pin.ko}
+            </text>
+          </g>
+        ))}
+      </svg>
+    </div>
   );
 }
