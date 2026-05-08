@@ -1,133 +1,166 @@
 .ktm-sheet {
   position: absolute;
-  left: 16px;
-  right: 16px;
-  bottom: 104px;
+  left: 12px;
+  right: 12px;
+  /* stacks above TripSummaryCard (96 tall, bottom 78) with an 8px gap */
+  bottom: 182px;
   z-index: 30;
-  height: 248px;
+  height: 256px;
   background: var(--c-surface);
-  border-radius: var(--r-2xl);
-  box-shadow: var(--shadow-lg);
-  padding: 18px;
+  border-radius: 28px 28px 0 0;
+  box-shadow: 0 -10px 28px rgba(0, 0, 0, 0.10);
+  padding: 14px 14px 12px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .ktm-sheet-handle {
   position: absolute;
   top: 8px;
   left: 50%;
-  width: 52px;
-  height: 5px;
+  width: 44px;
+  height: 4px;
   transform: translateX(-50%);
   border-radius: var(--r-pill);
   background: var(--c-line);
 }
 
+.ktm-sheet-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--c-tag-bg);
+  color: var(--c-ink-2);
+  font-size: 18px;
+  line-height: 1;
+  z-index: 1;
+}
+
 .ktm-sheet-content {
-  display: flex;
-  gap: 18px;
-  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 14px;
+  margin-top: 14px;
+  flex: 1;
+  min-height: 0;
 }
 
 .ktm-sheet-thumb {
-  width: 108px;
-  height: 108px;
-  flex: 0 0 108px;
-  border-radius: var(--r-lg);
-  background: linear-gradient(135deg, #b86935, #9e5424);
   position: relative;
+  width: 96px;
+  height: 96px;
+  border-radius: var(--r-md);
+  background: linear-gradient(135deg, #c97444, #8a4a2c);
   overflow: hidden;
 }
 
 .ktm-sheet-thumb-tag {
   position: absolute;
-  top: 12px;
-  left: 12px;
-  background: #fff;
-  border-radius: 10px;
-  padding: 8px;
+  top: 6px;
+  left: 6px;
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--c-ink);
+  border-radius: 6px;
+  font-size: 11px;
 }
 
 .ktm-sheet-info {
-  position: relative;
-  flex: 1;
   min-width: 0;
-}
-
-.ktm-sheet-close {
-  position: absolute;
-  top: -2px;
-  right: -2px;
-  width: 42px;
-  height: 42px;
-  border: 0;
-  border-radius: 50%;
-  background: #101820;
-  color: #fff;
-  font-size: 28px;
+  padding-right: 28px; /* leaves room for the close button */
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .ktm-sheet-title {
-  margin: 0 0 10px;
-  font-size: 25px;
-  font-weight: 900;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
 }
 
 .ktm-sheet-rating {
-  margin: 0 0 9px;
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--c-ink);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ktm-sheet-rating-star {
   color: var(--c-accent);
-  font-size: 18px;
-  font-weight: 800;
 }
 
 .ktm-sheet-rating-count {
-  color: #666;
+  color: var(--c-ink-3);
   font-weight: 500;
 }
 
 .ktm-sheet-meta {
-  margin: 0 0 10px;
-  font-size: 14px;
+  margin: 0;
+  font-size: 12px;
   color: var(--c-ink-3);
 }
 
 .ktm-sheet-tags {
   display: flex;
-  gap: 8px;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 2px;
 }
 
 .ktm-sheet-tag {
-  padding: 7px 12px;
+  padding: 4px 10px;
   border-radius: var(--r-pill);
   background: var(--c-tag-bg);
-  font-size: 13px;
-  font-weight: 700;
+  font-size: 11px;
+  font-weight: 600;
   color: #40454c;
 }
 
 .ktm-sheet-actions {
-  position: absolute;
-  left: 18px;
-  right: 18px;
-  bottom: 18px;
   display: grid;
   grid-template-columns: 1fr 1.15fr;
-  gap: 14px;
+  gap: 10px;
+  margin-top: auto;
 }
 
 .ktm-sheet-btn {
-  height: 54px;
+  height: 48px;
   border-radius: var(--r-md);
-  font-size: 17px;
-  font-weight: 800;
+  font-size: 14px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: transform 120ms ease;
+}
+
+.ktm-sheet-btn:active {
+  transform: scale(0.99);
 }
 
 .ktm-sheet-btn-outline {
   border: 1px solid #d7dbe0;
   background: #fff;
+  color: var(--c-ink-2);
 }
 
 .ktm-sheet-btn-primary {
   border: 0;
   background: var(--c-accent);
+  color: var(--c-accent-ink);
 }

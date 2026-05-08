@@ -25,8 +25,8 @@ const buildIcon = (place, selected) =>
         ${GLYPH[place.type] || ''}
       </div>
     `,
-    iconSize: [34, 34],
-    iconAnchor: [17, 17],
+    iconSize: [22, 22],
+    iconAnchor: [11, 11],
   });
 
 export default function PlaceMarker({ place, selected, onSelect }) {
@@ -36,7 +36,12 @@ export default function PlaceMarker({ place, selected, onSelect }) {
       icon={buildIcon(place, selected)}
       eventHandlers={{ click: () => onSelect?.(place.id) }}
     >
-      <Tooltip permanent direction="right" offset={[14, 0]}>
+      <Tooltip
+        permanent
+        direction="right"
+        offset={[10, 0]}
+        className="ktm-marker-tooltip"
+      >
         <div className="ktm-marker-label">
           <b>{place.name}</b>
           <span className="ktm-marker-label-sub">{place.ko}</span>

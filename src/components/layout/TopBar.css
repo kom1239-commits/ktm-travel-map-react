@@ -1,40 +1,46 @@
 .ktm-topbar {
   position: absolute;
-  top: 26px;
-  left: 22px;
-  right: 22px;
+  top: 14px;
+  left: 16px;
+  right: 16px;
   z-index: 20;
-  height: 58px;
+  height: 52px;
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
 }
 
 .ktm-topbar-btn {
-  width: 56px;
-  height: 56px;
+  width: 48px;
+  height: 48px;
   border: 0;
-  border-radius: 18px;
+  border-radius: 14px;
   background: var(--c-surface);
-  font-size: 28px;
-  box-shadow: var(--shadow-md);
+  font-size: 22px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.10);
+  transition: background-color 120ms ease;
+}
+
+.ktm-topbar-btn:active {
+  background: #fafafa;
 }
 
 .ktm-topbar-logo {
   flex: 1;
   line-height: 1;
+  padding-left: 4px;
 }
 
 .ktm-topbar-logo-main {
-  font-size: 36px;
+  font-size: 24px;
   font-weight: 900;
   color: var(--c-accent);
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
 }
 
 .ktm-topbar-logo-sub {
-  font-size: 12px;
+  font-size: 9px;
   font-weight: 800;
   color: #1f2a35;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.4px;
 }

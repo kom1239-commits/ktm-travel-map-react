@@ -3,29 +3,30 @@
   left: 0;
   right: 0;
   bottom: 0;
-  height: 92px;
+  height: 72px;
   z-index: 40;
   background: var(--c-navy);
-  border-radius: 28px 28px 0 0;
+  border-radius: 24px 24px 0 0;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  padding-top: 14px;
+  padding-top: 10px;
   box-sizing: border-box;
+  box-shadow: 0 -6px 18px rgba(14, 45, 80, 0.16);
 }
 
 .ktm-bottomnav-item {
   background: none;
   border: 0;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.65);
   text-align: center;
-  font-size: 26px;
+  font-size: 20px;
   transition: color 120ms ease;
 }
 
 .ktm-bottomnav-item-label {
   display: block;
-  margin-top: 3px;
-  font-size: 12px;
+  margin-top: 2px;
+  font-size: 10px;
   font-weight: 700;
 }
 

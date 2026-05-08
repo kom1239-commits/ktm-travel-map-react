@@ -3,3 +3,19 @@
   inset: 0;
   z-index: 0;
 }
+
+/* Tooltip baseline (Leaflet default has white box + arrow). Keep it
+ * subtle so labels feel like part of the map, not popovers. */
+.leaflet-tooltip.ktm-marker-tooltip {
+  background: rgba(255, 255, 255, 0.92);
+  border: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  padding: 2px 6px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.leaflet-tooltip.ktm-marker-tooltip::before,
+.leaflet-tooltip.ktm-marker-tooltip::after {
+  display: none;
+}

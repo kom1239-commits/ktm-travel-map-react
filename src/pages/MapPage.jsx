@@ -6,6 +6,7 @@ import FloatingControls from '../components/floating/FloatingControls.jsx';
 import NavigationFAB from '../components/floating/NavigationFAB.jsx';
 import PlaceBottomSheet from '../components/sheet/PlaceBottomSheet.jsx';
 import TravelStatusCard from '../components/cards/TravelStatusCard.jsx';
+import TripSummaryCard from '../components/cards/TripSummaryCard.jsx';
 import { places, getPlaceById } from '../data/places.js';
 import { trip, routeCoords } from '../data/routes.js';
 import './MapPage.css';
@@ -13,8 +14,7 @@ import './MapPage.css';
 const DEFAULT_PLACE_ID = 'charyn';
 
 export default function MapPage() {
-  // Single source of truth — selectedPlaceId drives marker highlight,
-  // route emphasis (future), and the bottom sheet content.
+  // Single source of truth — drives marker highlight + bottom sheet content.
   const [selectedPlaceId, setSelectedPlaceId] = useState(DEFAULT_PLACE_ID);
   const [activeTab, setActiveTab] = useState('home');
 
@@ -38,6 +38,7 @@ export default function MapPage() {
         place={selectedPlace}
         onClose={() => setSelectedPlaceId(null)}
       />
+      <TripSummaryCard trip={trip} />
 
       <BottomNav active={activeTab} onChange={setActiveTab} />
     </div>
