@@ -1,18 +1,19 @@
 import { Polyline } from 'react-leaflet';
 
-// Halo + line. Subtle, navigation-feeling — not a thick train track.
+// Yellow navigation route per spec.
+// White halo underneath gives the line legibility on terrain shading.
 const HALO = {
   color: '#ffffff',
-  weight: 6,
-  opacity: 0.7,
+  weight: 7,
+  opacity: 0.85,
   lineCap: 'round',
   lineJoin: 'round',
 };
 
 const LINE = {
-  color: '#d2453a',
-  weight: 2.6,
-  opacity: 0.92,
+  color: '#F4C400',
+  weight: 4,
+  opacity: 0.95,
   lineCap: 'round',
   lineJoin: 'round',
 };

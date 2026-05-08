@@ -1,17 +1,19 @@
+import Icon from '../Icon/Icon.jsx';
 import './TravelStatusCard.css';
 
-// "현지 여행 운영" 상태 표시. 카드라기보다 라이브 상태 칩.
 export default function TravelStatusCard({ trip, onOpen }) {
   if (!trip) return null;
   return (
-    <button type="button" className="travel-status" onClick={onOpen}>
-      <span className="travel-status__pulse" aria-hidden>
-        <span className="travel-status__pulse-dot" />
+    <button type="button" className="status-card" onClick={onOpen}>
+      <span className="status-card__icon" aria-hidden>
+        <Icon name="bookmark" size={14} stroke="var(--c-accent)" filled />
       </span>
-      <span className="travel-status__title">{trip.title}</span>
-      <span className="travel-status__sep" aria-hidden>·</span>
-      <span className="travel-status__day">
-        Day {trip.currentDay}/{trip.totalDays}
+      <span className="status-card__body">
+        <span className="status-card__label">내 여행</span>
+        <span className="status-card__title">{trip.title}</span>
+      </span>
+      <span className="status-card__chev" aria-hidden>
+        <Icon name="chevronDown" size={16} />
       </span>
     </button>
   );

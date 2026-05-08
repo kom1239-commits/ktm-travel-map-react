@@ -1,98 +1,144 @@
 .place-sheet {
-  position: absolute;
-  left: 12px;
-  right: 12px;
-  bottom: calc(var(--bottom-nav-h) + var(--safe-bottom) + 12px);
-  z-index: 420;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 14px 14px 12px;
+  position: relative;
+  flex-shrink: 0;
+  height: var(--place-sheet-h);
   background: var(--c-surface);
-  border-radius: var(--r-lg);
-  box-shadow: var(--shadow-2);
-  border: 1px solid rgba(15, 17, 21, 0.04);
+  border-top-left-radius: 34px;
+  border-top-right-radius: 34px;
+  box-shadow: 0 -10px 28px rgba(15, 17, 21, 0.1);
+  padding: 14px 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .place-sheet__grip {
   position: absolute;
-  top: 6px;
+  top: 8px;
   left: 50%;
   transform: translateX(-50%);
-  width: 32px;
-  height: 3px;
+  width: 38px;
+  height: 4px;
   border-radius: 2px;
   background: var(--c-line);
 }
 
-.place-sheet__main {
-  flex: 1;
-  min-width: 0;
-  padding-right: 16px;
-  padding-top: 4px;
-}
-
-.place-sheet__title {
-  margin: 0;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-}
-
-.place-sheet__meta {
-  margin: 3px 0 0;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 11px;
-  color: var(--c-ink-3);
-}
-
-.place-sheet__rating {
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-  color: var(--c-ink-2);
-  font-weight: 600;
-}
-
-.place-sheet__sep {
-  color: var(--c-line);
-}
-
-.place-sheet__actions {
-  display: flex;
-  gap: 6px;
-}
-
-.place-sheet__action {
-  height: 30px;
-  padding: 0 12px;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--c-ink-2);
-  background: var(--c-surface-2);
-  border-radius: var(--r-pill);
-  transition: transform 100ms ease, background-color 100ms ease;
-}
-
-.place-sheet__action--primary {
-  color: var(--c-ink);
-  background: transparent;
-  border: 1px solid var(--c-ink);
-}
-
-.place-sheet__action:active {
-  transform: scale(0.98);
-}
-
 .place-sheet__close {
   position: absolute;
-  top: 6px;
-  right: 6px;
+  top: 12px;
+  right: 14px;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--c-surface-2);
+}
+
+.place-sheet__content {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.place-sheet__thumb {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  border-radius: var(--r-md);
+  background-image: linear-gradient(135deg, #c97444, #6a3a26);
+  overflow: hidden;
+}
+
+.place-sheet__thumb-tag {
+  position: absolute;
+  top: 8px;
+  left: 8px;
   width: 22px;
   height: 22px;
   display: grid;
   place-items: center;
-  border-radius: 50%;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--c-ink);
+}
+
+.place-sheet__body {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.place-sheet__title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.place-sheet__row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--c-ink-2);
+}
+
+.place-sheet__row--meta {
+  font-size: 11px;
+  color: var(--c-ink-3);
+}
+
+.place-sheet__muted {
+  color: var(--c-ink-3);
+}
+
+.place-sheet__tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.place-sheet__tag {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--c-ink-2);
+  background: var(--c-surface-2);
+  padding: 3px 8px;
+  border-radius: var(--r-pill);
+}
+
+.place-sheet__actions {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.place-sheet__action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 44px;
+  border-radius: var(--r-pill);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.place-sheet__action--outline {
+  background: var(--c-surface-2);
+  color: var(--c-ink-2);
+}
+
+.place-sheet__action--primary {
+  background: var(--c-accent);
+  color: var(--c-accent-ink);
+}
+
+.place-sheet__action:active {
+  transform: scale(0.99);
 }

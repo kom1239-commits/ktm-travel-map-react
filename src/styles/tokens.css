@@ -1,6 +1,6 @@
 :root {
   /* Surfaces */
-  --c-bg: #ede5d3;          /* warm beige fallback under map */
+  --c-bg: #ede5d3;
   --c-surface: #ffffff;
   --c-surface-2: #f6f7f9;
 
@@ -10,34 +10,43 @@
   --c-ink-3: #7a8089;
   --c-line: #e3e6ea;
 
-  /* Brand / accents */
-  --c-accent: #ffc23c;
-  --c-accent-ink: #1a1a1a;
+  /* Brand navy (status card / bottom nav / nav FAB) */
+  --c-navy: #0E2D50;
+  --c-navy-2: #10233F;
 
-  /* Route / pin (navigation, not toy) */
-  --c-route: #d2453a;
-  --c-route-halo: #ffffff;
-  --c-pin: #15181d;
-  --c-pin-active: #d2453a;
+  /* Accent yellow (CTA + route) */
+  --c-accent: #F4C400;
+  --c-accent-ink: #1a1a1a;
+  --c-route: #F4C400;
   --c-live: #2c8f5a;
+
+  /* Marker palette by place kind */
+  --c-pin-city: #1d2026;
+  --c-pin-mountain: #2c8f5a;
+  --c-pin-canyon: #c97444;
+  --c-pin-lake: #2e7fb3;
 
   /* Radii */
   --r-sm: 8px;
-  --r-md: 12px;
-  --r-lg: 16px;
+  --r-md: 14px;
+  --r-lg: 22px;
+  --r-xl: 28px;
   --r-pill: 999px;
 
   /* Shadows */
-  --shadow-1: 0 1px 2px rgba(15, 17, 21, 0.08), 0 6px 16px rgba(15, 17, 21, 0.08);
-  --shadow-2: 0 10px 28px rgba(15, 17, 21, 0.16);
+  --shadow-1: 0 1px 2px rgba(15, 17, 21, 0.06), 0 6px 16px rgba(15, 17, 21, 0.08);
+  --shadow-2: 0 12px 28px rgba(15, 17, 21, 0.18);
+  --shadow-fab: 0 8px 22px rgba(14, 45, 80, 0.34);
 
   /* Safe areas */
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
 
-  /* Layout */
-  --top-bar-h: 52px;
-  --bottom-nav-h: 60px;
+  /* Layout heights (per spec) */
+  --top-bar-h: 72px;
+  --bottom-nav-h: 92px;
+  --place-sheet-h: 260px;
+  --trip-summary-h: 110px;
 
   --font-sans: -apple-system, BlinkMacSystemFont, 'Pretendard', 'Apple SD Gothic Neo',
     'Segoe UI', Roboto, sans-serif;

@@ -9,13 +9,13 @@ const formatDriveTime = (mins) => {
   return `${h}시간${m ? ` ${m}분` : ''}`;
 };
 
-const SHEET_TRANSITION = { type: 'spring', damping: 30, stiffness: 320, mass: 0.8 };
+const SHEET_TRANSITION = { type: 'spring', damping: 32, stiffness: 340, mass: 0.85 };
 
 export default function PlaceBottomSheet({ place, onClose, onMessage, onAdd }) {
   return (
-    <AnimatePresence>
+    <AnimatePresence initial={false}>
       {place && (
-        <motion.article
+        <motion.section
           key={place.id}
           className="place-sheet"
           role="dialog"
@@ -25,38 +25,7 @@ export default function PlaceBottomSheet({ place, onClose, onMessage, onAdd }) {
           exit={{ y: 80, opacity: 0 }}
           transition={SHEET_TRANSITION}
         >
-          <div className="place-sheet__grip" aria-hidden />
-
-          <div className="place-sheet__main">
-            <h3 className="place-sheet__title">{place.nameKo ?? place.name}</h3>
-            <p className="place-sheet__meta">
-              {place.rating != null && (
-                <>
-                  <span className="place-sheet__rating">
-                    <Icon name="star" size={11} stroke="var(--c-accent)" filled />
-                    {place.rating.toFixed(1)}
-                  </span>
-                  <span className="place-sheet__sep" aria-hidden>·</span>
-                </>
-              )}
-              {place.driveMinutesFromAlmaty && (
-                <span>알마티에서 {formatDriveTime(place.driveMinutesFromAlmaty)}</span>
-              )}
-            </p>
-          </div>
-
-          <div className="place-sheet__actions">
-            <button type="button" className="place-sheet__action" onClick={onMessage}>
-              문의
-            </button>
-            <button
-              type="button"
-              className="place-sheet__action place-sheet__action--primary"
-              onClick={onAdd}
-            >
-              일정추가
-            </button>
-          </div>
+          <span className="place-sheet__grip" aria-hidden />
 
           <button
             type="button"
@@ -64,9 +33,78 @@ export default function PlaceBottomSheet({ place, onClose, onMessage, onAdd }) {
             aria-label="닫기"
             onClick={onClose}
           >
-            <Icon name="close" size={14} stroke="var(--c-ink-3)" />
+            <Icon name="close" size={16} stroke="var(--c-ink-3)" />
           </button>
-        </motion.article>
+
+          <div className="place-sheet__content">
+            <div
+              className="place-sheet__thumb"
+              style={
+                place.thumbGradient
+                  ? {
+                      backgroundImage: `linear-gradient(135deg, ${place.thumbGradient[0]}, ${place.thumbGradient[1]})`,
+                    }
+                  : undefined
+              }
+              aria-hidden
+            >
+              <span className="place-sheet__thumb-tag">
+                <Icon name="bookmark" size={12} filled />
+              </span>
+            </div>
+
+            <div className="place-sheet__body">
+              <h3 className="place-sheet__title">{place.nameKo ?? place.name}</h3>
+
+              {place.rating != null && (
+                <div className="place-sheet__row">
+                  <Icon name="star" size={13} stroke="var(--c-accent)" filled />
+                  <strong>{place.rating.toFixed(1)}</strong>
+                  <span className="place-sheet__muted">({place.reviewCount})</span>
+                </div>
+              )}
+
+              {place.driveMinutesFromAlmaty && (
+                <div className="place-sheet__row place-sheet__row--meta">
+                  <Icon name="car" size={13} stroke="var(--c-ink-3)" />
+                  <span>
+                    알마티에서 {formatDriveTime(place.driveMinutesFromAlmaty)}
+                    {place.distanceFromAlmatyKm
+                      ? ` (${place.distanceFromAlmatyKm}km)`
+                      : ''}
+                  </span>
+                </div>
+              )}
+
+              {place.tags?.length ? (
+                <div className="place-sheet__tags">
+                  {place.tags.map((t) => (
+                    <span key={t} className="place-sheet__tag">{t}</span>
+                  ))}
+                </div>
+              ) : null}
+            </div>
+          </div>
+
+          <div className="place-sheet__actions">
+            <button
+              type="button"
+              className="place-sheet__action place-sheet__action--outline"
+              onClick={onMessage}
+            >
+              <Icon name="message" size={14} />
+              <span>기사 문의</span>
+            </button>
+            <button
+              type="button"
+              className="place-sheet__action place-sheet__action--primary"
+              onClick={onAdd}
+            >
+              <Icon name="plus" size={14} stroke="var(--c-accent-ink)" />
+              <span>일정에 추가</span>
+            </button>
+          </div>
+        </motion.section>
       )}
     </AnimatePresence>
   );

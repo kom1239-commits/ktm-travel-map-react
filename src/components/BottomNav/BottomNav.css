@@ -1,17 +1,14 @@
 .bottom-nav {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 500;
+  flex-shrink: 0;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   height: calc(var(--bottom-nav-h) + var(--safe-bottom));
+  margin-top: 10px;
   padding-bottom: var(--safe-bottom);
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-top: 1px solid var(--c-line);
+  background: var(--c-navy);
+  border-top-left-radius: 28px;
+  border-top-right-radius: 28px;
+  box-shadow: 0 -8px 22px rgba(14, 45, 80, 0.18);
 }
 
 .bottom-nav__item {
@@ -19,12 +16,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2px;
+  gap: 3px;
   font-size: 10px;
   font-weight: 600;
-  color: var(--c-ink-3);
+  color: rgba(255, 255, 255, 0.55);
+  transition: color 120ms ease;
 }
 
 .bottom-nav__item.is-active {
-  color: var(--c-ink);
+  color: var(--c-accent);
 }
