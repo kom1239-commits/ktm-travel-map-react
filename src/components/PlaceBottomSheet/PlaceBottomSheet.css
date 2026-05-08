@@ -1,15 +1,17 @@
 .place-sheet {
-  position: relative;
-  flex-shrink: 0;
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: var(--place-sheet-bottom);
   height: var(--place-sheet-h);
+  z-index: 30;
   background: var(--c-surface);
-  border-top-left-radius: 34px;
-  border-top-right-radius: 34px;
-  box-shadow: 0 -10px 28px rgba(15, 17, 21, 0.1);
+  border-radius: 30px;
+  box-shadow: var(--shadow-2);
   padding: 14px 16px 12px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .place-sheet__grip {
@@ -37,16 +39,18 @@
 
 .place-sheet__content {
   display: grid;
-  grid-template-columns: 110px 1fr;
+  grid-template-columns: 112px 1fr;
   gap: 14px;
-  margin-top: 12px;
+  margin-top: 10px;
+  flex: 1;
+  min-height: 0;
 }
 
 .place-sheet__thumb {
   position: relative;
-  width: 110px;
-  height: 110px;
-  border-radius: var(--r-md);
+  width: 112px;
+  height: 112px;
+  border-radius: 18px;
   background-image: linear-gradient(135deg, #c97444, #6a3a26);
   overflow: hidden;
 }
@@ -113,9 +117,9 @@
 
 .place-sheet__actions {
   display: grid;
-  grid-template-columns: 1fr 1.25fr;
-  gap: 8px;
-  margin-top: auto;
+  grid-template-columns: 48fr 52fr;
+  gap: 14px;
+  height: 44px;
 }
 
 .place-sheet__action {

@@ -1,8 +1,9 @@
 .fb {
   position: absolute;
-  top: calc(var(--safe-top) + var(--top-bar-h) + 6px);
-  right: 12px;
-  z-index: 400;
+  /* aligned with TravelStatusCard's top */
+  top: calc(var(--safe-top) + 12px + var(--top-bar-h) + 12px);
+  right: 16px;
+  z-index: 20;
   display: flex;
   flex-direction: column;
   gap: 10px;

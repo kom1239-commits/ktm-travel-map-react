@@ -20,21 +20,20 @@ export default function App() {
 
   return (
     <div className="app">
-      <main className="app__map">
+      <div className="app__map-layer">
         <MapView selectedId={selectedId} onSelect={setSelectedId} />
-        <TopBar />
-        <TravelStatusCard trip={trip} />
-        <FloatingButtons />
-        <NavigationFab />
-      </main>
+      </div>
+
+      <TopBar />
+      <TravelStatusCard trip={trip} />
+      <FloatingButtons />
+      <NavigationFab />
 
       <PlaceBottomSheet
         place={selectedPlace}
         onClose={() => setSelectedId(null)}
       />
-
       <TripSummaryCard trip={trip} />
-
       <BottomNav active={activeTab} onChange={setActiveTab} />
     </div>
   );

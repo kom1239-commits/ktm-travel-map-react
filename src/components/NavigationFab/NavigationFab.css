@@ -1,8 +1,9 @@
 .nav-fab {
   position: absolute;
-  right: 16px;
-  bottom: 16px;
-  z-index: 450;
+  right: 18px;
+  /* sits in the visible map area, just above the PlaceBottomSheet */
+  bottom: var(--nav-fab-bottom);
+  z-index: 35;
   width: 56px;
   height: 56px;
   display: grid;

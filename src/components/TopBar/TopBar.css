@@ -1,14 +1,13 @@
 .top-bar {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 500;
+  top: calc(var(--safe-top) + 12px);
+  left: 16px;
+  right: 16px;
+  height: var(--top-bar-h);
+  z-index: 20;
   display: flex;
   align-items: center;
   gap: 10px;
-  height: var(--top-bar-h);
-  padding: var(--safe-top) 12px 0;
   pointer-events: none;
 }
 
@@ -36,7 +35,7 @@
   flex-direction: column;
   align-items: flex-start;
   line-height: 1;
-  padding-left: 4px;
+  padding-left: 6px;
   pointer-events: none;
 }
 

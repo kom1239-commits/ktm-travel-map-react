@@ -5,8 +5,7 @@ import { createPlaceIcon } from './markerIcons.js';
 import RouteLayer from './RouteLayer.jsx';
 import './MapView.css';
 
-// Stadia Stamen Terrain — light beige terrain shading, soft mountains,
-// minimal road clutter. Komoot-inspired natural exploration map.
+// Stadia Stamen Terrain — light beige terrain, soft hillshade, modern.
 // Free for non-production / localhost. Production deployments should
 // register an API key at https://stadiamaps.com.
 const TILE_URL =
@@ -16,13 +15,19 @@ const TILE_ATTRIBUTION =
   '<a href="https://stamen.com/">Stamen</a> · ' +
   '<a href="https://www.openstreetmap.org/copyright">OSM</a>';
 
+// Reserved space (px) at the top/bottom that floating UI covers — used so
+// fitBounds places the route inside the visible map slice, not under the
+// TravelStatusCard or the PlaceBottomSheet.
+const TOP_RESERVED = 150;       // safe-top + TopBar + status card row
+const BOTTOM_RESERVED = 470;    // bottom-nav + trip summary + place sheet + gaps
+
 function FitToRoute({ coords }) {
   const map = useMap();
   useEffect(() => {
     if (!coords?.length) return;
     map.fitBounds(coords, {
-      paddingTopLeft: [40, 110],
-      paddingBottomRight: [40, 70],
+      paddingTopLeft: [40, TOP_RESERVED],
+      paddingBottomRight: [40, BOTTOM_RESERVED],
       maxZoom: 10,
       animate: false,
     });

@@ -10,11 +10,11 @@
   --c-ink-3: #7a8089;
   --c-line: #e3e6ea;
 
-  /* Brand navy (status card / bottom nav / nav FAB) */
+  /* Brand navy */
   --c-navy: #0E2D50;
   --c-navy-2: #10233F;
 
-  /* Accent yellow (CTA + route) */
+  /* Accent yellow */
   --c-accent: #F4C400;
   --c-accent-ink: #1a1a1a;
   --c-route: #F4C400;
@@ -42,11 +42,25 @@
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
 
-  /* Layout heights (per spec) */
-  --top-bar-h: 72px;
+  /* Floating layout heights (values from spec) */
+  --top-bar-h: 56px;
+  --status-card-h: 56px;
+  --place-sheet-h: 240px;
+  --trip-summary-h: 104px;
   --bottom-nav-h: 92px;
-  --place-sheet-h: 260px;
-  --trip-summary-h: 110px;
+  --gap: 12px;
+
+  /* Bottom-stack offsets — distance from viewport bottom to top of each card */
+  --trip-summary-bottom: calc(var(--bottom-nav-h) + var(--safe-bottom) + var(--gap));
+  --place-sheet-bottom: calc(
+    var(--bottom-nav-h) + var(--safe-bottom) + var(--gap) +
+    var(--trip-summary-h) + var(--gap)
+  );
+  --nav-fab-bottom: calc(
+    var(--bottom-nav-h) + var(--safe-bottom) + var(--gap) +
+    var(--trip-summary-h) + var(--gap) +
+    var(--place-sheet-h) + 16px
+  );
 
   --font-sans: -apple-system, BlinkMacSystemFont, 'Pretendard', 'Apple SD Gothic Neo',
     'Segoe UI', Roboto, sans-serif;

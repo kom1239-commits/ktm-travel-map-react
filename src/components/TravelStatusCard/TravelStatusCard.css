@@ -1,14 +1,16 @@
 .status-card {
   position: absolute;
-  top: calc(var(--safe-top) + var(--top-bar-h) + 6px);
-  left: 12px;
-  z-index: 400;
+  /* below TopBar with 12px gap */
+  top: calc(var(--safe-top) + 12px + var(--top-bar-h) + 12px);
+  left: 16px;
+  /* leaves room on the right for FloatingButtons (44 + 16 right + 12 gap) */
+  width: min(280px, calc(100% - 16px - 44px - 16px - 12px));
+  height: var(--status-card-h);
+  padding: 0 12px;
+  z-index: 20;
   display: flex;
   align-items: center;
   gap: 10px;
-  width: min(320px, calc(100% - 90px));
-  height: 56px;
-  padding: 0 12px;
   background: var(--c-navy-2);
   color: #fff;
   border-radius: var(--r-lg);
