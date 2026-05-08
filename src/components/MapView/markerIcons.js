@@ -1,19 +1,13 @@
 import L from 'leaflet';
 
-const buildHtml = ({ label, active }) => `
-  <div class="ktm-pin ${active ? 'is-active' : ''}">
-    <div class="ktm-pin__dot"></div>
-    <div class="ktm-pin__label">${label}</div>
-  </div>
-`;
-
-export const createPlaceIcon = (place, { active = false } = {}) =>
-  L.divIcon({
+// Maps.me-style: pure dots. No labels, no pills.
+// The base map already renders place names; the bottom sheet shows the rest.
+export const createPlaceIcon = (_place, { active = false } = {}) => {
+  const size = active ? 18 : 12;
+  return L.divIcon({
     className: 'ktm-pin-wrapper',
-    html: buildHtml({
-      label: place.nameKo ?? place.name,
-      active,
-    }),
-    iconSize: [80, 36],
-    iconAnchor: [40, 22],
+    html: `<div class="ktm-pin ${active ? 'is-active' : ''}"><div class="ktm-pin__dot"></div></div>`,
+    iconSize: [size, size],
+    iconAnchor: [size / 2, size / 2],
   });
+};

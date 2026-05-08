@@ -2,9 +2,4 @@
   position: fixed;
   inset: 0;
   overflow: hidden;
-  --fab-bottom: calc(var(--bottom-nav-h) + var(--safe-bottom) + 16px);
-}
-
-.app.has-card {
-  --fab-bottom: calc(var(--bottom-nav-h) + var(--safe-bottom) + 84px);
 }

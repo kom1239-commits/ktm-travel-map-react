@@ -1,4 +1,4 @@
-.ktm-header {
+.top-bar {
   position: absolute;
   top: 0;
   left: 0;
@@ -7,19 +7,19 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: var(--header-h);
+  height: var(--top-bar-h);
   padding: var(--safe-top) 12px 0;
   pointer-events: none;
 }
 
-.ktm-header__cluster {
+.top-bar__cluster {
   display: flex;
   align-items: center;
   gap: 6px;
   pointer-events: auto;
 }
 
-.ktm-header__chip {
+.top-bar__chip {
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -33,21 +33,21 @@
   box-shadow: var(--shadow-1);
 }
 
-.ktm-header__chip--icon:active {
+.top-bar__chip--icon:active {
   background: var(--c-surface-2);
 }
 
-.ktm-header__chip--brand {
+.top-bar__chip--brand {
   padding: 0 12px;
 }
 
-.ktm-header__logo {
+.top-bar__logo {
   font-size: 14px;
   font-weight: 800;
   letter-spacing: 0.6px;
 }
 
-.ktm-header__dot {
+.top-bar__dot {
   position: absolute;
   top: 7px;
   right: 8px;
