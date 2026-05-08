@@ -1,0 +1,19 @@
+.ktm-fab {
+  position: absolute;
+  right: 30px;
+  bottom: 346px;
+  z-index: 28;
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  border: 0;
+  background: var(--c-navy);
+  color: #fff;
+  font-size: 34px;
+  box-shadow: var(--shadow-fab);
+  transition: transform 120ms ease;
+}
+
+.ktm-fab:active {
+  transform: scale(0.96);
+}

@@ -1,0 +1,133 @@
+.ktm-sheet {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 104px;
+  z-index: 30;
+  height: 248px;
+  background: var(--c-surface);
+  border-radius: 30px;
+  box-shadow: var(--shadow-lg);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+.ktm-sheet__handle {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  width: 52px;
+  height: 5px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: var(--c-line);
+}
+
+.ktm-sheet__content {
+  display: flex;
+  gap: 18px;
+  margin-top: 10px;
+}
+
+.ktm-sheet__thumb {
+  width: 108px;
+  height: 108px;
+  flex: 0 0 108px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #b86935, #9e5424);
+  position: relative;
+  overflow: hidden;
+}
+
+.ktm-sheet__thumb span {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 8px;
+}
+
+.ktm-sheet__info {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+.ktm-sheet__close {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 50%;
+  background: #101820;
+  color: #fff;
+  font-size: 28px;
+}
+
+.ktm-sheet__info h2 {
+  margin: 0 0 10px;
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.ktm-sheet__rating {
+  margin: 0 0 9px;
+  color: var(--c-accent);
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.ktm-sheet__rating span {
+  color: #666;
+  font-weight: 500;
+}
+
+.ktm-sheet__meta {
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: var(--c-ink-3);
+}
+
+.ktm-sheet__tags {
+  display: flex;
+  gap: 8px;
+}
+
+.ktm-sheet__tags span {
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: var(--c-tag-bg);
+  font-size: 13px;
+  font-weight: 700;
+  color: #40454c;
+}
+
+.ktm-sheet__actions {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 14px;
+}
+
+.ktm-sheet__btn {
+  height: 54px;
+  border-radius: 16px;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.ktm-sheet__btn--outline {
+  border: 1px solid #d7dbe0;
+  background: #fff;
+}
+
+.ktm-sheet__btn--primary {
+  border: 0;
+  background: var(--c-accent);
+}

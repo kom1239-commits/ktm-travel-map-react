@@ -1,0 +1,40 @@
+.ktm-topbar {
+  position: absolute;
+  top: 26px;
+  left: 22px;
+  right: 22px;
+  z-index: 20;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.ktm-topbar__btn {
+  width: 56px;
+  height: 56px;
+  border: 0;
+  border-radius: 18px;
+  background: var(--c-surface);
+  font-size: 28px;
+  box-shadow: var(--shadow-md);
+}
+
+.ktm-topbar__logo {
+  flex: 1;
+  line-height: 1;
+}
+
+.ktm-topbar__logo > div {
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--c-accent);
+  letter-spacing: -1px;
+}
+
+.ktm-topbar__logo span {
+  font-size: 12px;
+  font-weight: 800;
+  color: #1f2a35;
+  letter-spacing: 0.5px;
+}

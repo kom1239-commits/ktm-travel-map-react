@@ -1,0 +1,7 @@
+.ktm-app {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: var(--c-bg);
+  overflow: hidden;
+}

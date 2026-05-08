@@ -1,0 +1,59 @@
+.ktm-travel-card {
+  position: absolute;
+  top: 104px;
+  left: 24px;
+  z-index: 20;
+  width: 292px;
+  height: 68px;
+  border: 0;
+  border-radius: 22px;
+  background: var(--c-navy-2);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 18px;
+  box-sizing: border-box;
+  box-shadow: var(--shadow-card);
+  text-align: left;
+  transition: transform 120ms ease;
+}
+
+.ktm-travel-card:active {
+  transform: scale(0.99);
+}
+
+.ktm-travel-card__icon {
+  color: var(--c-accent);
+  font-size: 26px;
+  flex-shrink: 0;
+}
+
+.ktm-travel-card__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.ktm-travel-card__label {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 3px;
+}
+
+.ktm-travel-card__title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ktm-travel-card__chev {
+  margin-left: auto;
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.7);
+  flex-shrink: 0;
+}
