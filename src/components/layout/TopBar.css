@@ -10,7 +10,7 @@
   gap: 14px;
 }
 
-.ktm-topbar__btn {
+.ktm-topbar-btn {
   width: 56px;
   height: 56px;
   border: 0;
@@ -20,19 +20,19 @@
   box-shadow: var(--shadow-md);
 }
 
-.ktm-topbar__logo {
+.ktm-topbar-logo {
   flex: 1;
   line-height: 1;
 }
 
-.ktm-topbar__logo > div {
+.ktm-topbar-logo-main {
   font-size: 36px;
   font-weight: 900;
   color: var(--c-accent);
   letter-spacing: -1px;
 }
 
-.ktm-topbar__logo span {
+.ktm-topbar-logo-sub {
   font-size: 12px;
   font-weight: 800;
   color: #1f2a35;

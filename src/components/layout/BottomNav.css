@@ -1,4 +1,4 @@
-.ktm-bottom-nav {
+.ktm-bottomnav {
   position: absolute;
   left: 0;
   right: 0;
@@ -13,7 +13,7 @@
   box-sizing: border-box;
 }
 
-.ktm-bottom-nav__item {
+.ktm-bottomnav-item {
   background: none;
   border: 0;
   color: rgba(255, 255, 255, 0.75);
@@ -22,13 +22,13 @@
   transition: color 120ms ease;
 }
 
-.ktm-bottom-nav__item span {
+.ktm-bottomnav-item-label {
   display: block;
   margin-top: 3px;
   font-size: 12px;
   font-weight: 700;
 }
 
-.ktm-bottom-nav__item.is-active {
+.ktm-bottomnav-item-active {
   color: var(--c-accent);
 }

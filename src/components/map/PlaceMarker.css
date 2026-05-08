@@ -12,7 +12,7 @@
   transition: transform 140ms ease;
 }
 
-.ktm-marker--selected {
+.ktm-marker-selected {
   transform: scale(1.18);
 }
 
@@ -22,7 +22,7 @@
   color: #111;
 }
 
-.ktm-marker-label span {
+.ktm-marker-label-sub {
   display: block;
   font-size: 11px;
 }

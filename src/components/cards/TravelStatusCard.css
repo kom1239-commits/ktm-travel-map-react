@@ -1,4 +1,4 @@
-.ktm-travel-card {
+.ktm-status {
   position: absolute;
   top: 104px;
   left: 24px;
@@ -6,7 +6,7 @@
   width: 292px;
   height: 68px;
   border: 0;
-  border-radius: 22px;
+  border-radius: var(--r-xl);
   background: var(--c-navy-2);
   color: #fff;
   display: flex;
@@ -19,30 +19,30 @@
   transition: transform 120ms ease;
 }
 
-.ktm-travel-card:active {
+.ktm-status:active {
   transform: scale(0.99);
 }
 
-.ktm-travel-card__icon {
+.ktm-status-icon {
   color: var(--c-accent);
   font-size: 26px;
   flex-shrink: 0;
 }
 
-.ktm-travel-card__body {
+.ktm-status-body {
   flex: 1;
   display: flex;
   flex-direction: column;
   min-width: 0;
 }
 
-.ktm-travel-card__label {
+.ktm-status-label {
   font-size: 13px;
   color: rgba(255, 255, 255, 0.65);
   margin-bottom: 3px;
 }
 
-.ktm-travel-card__title {
+.ktm-status-title {
   font-size: 17px;
   font-weight: 700;
   color: #fff;
@@ -51,7 +51,7 @@
   text-overflow: ellipsis;
 }
 
-.ktm-travel-card__chev {
+.ktm-status-chev {
   margin-left: auto;
   font-size: 24px;
   color: rgba(255, 255, 255, 0.7);

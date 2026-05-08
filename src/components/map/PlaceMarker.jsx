@@ -20,7 +20,7 @@ const buildIcon = (place, selected) =>
   L.divIcon({
     className: '',
     html: `
-      <div class="ktm-marker ${selected ? 'ktm-marker--selected' : ''}"
+      <div class="ktm-marker ${selected ? 'ktm-marker-selected' : ''}"
            style="background:${COLORS[place.type] || '#333'}">
         ${GLYPH[place.type] || ''}
       </div>
@@ -39,7 +39,7 @@ export default function PlaceMarker({ place, selected, onSelect }) {
       <Tooltip permanent direction="right" offset={[14, 0]}>
         <div className="ktm-marker-label">
           <b>{place.name}</b>
-          <span>{place.ko}</span>
+          <span className="ktm-marker-label-sub">{place.ko}</span>
         </div>
       </Tooltip>
     </Marker>

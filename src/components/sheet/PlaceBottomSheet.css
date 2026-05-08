@@ -6,40 +6,40 @@
   z-index: 30;
   height: 248px;
   background: var(--c-surface);
-  border-radius: 30px;
+  border-radius: var(--r-2xl);
   box-shadow: var(--shadow-lg);
   padding: 18px;
   box-sizing: border-box;
 }
 
-.ktm-sheet__handle {
+.ktm-sheet-handle {
   position: absolute;
   top: 8px;
   left: 50%;
   width: 52px;
   height: 5px;
   transform: translateX(-50%);
-  border-radius: 999px;
+  border-radius: var(--r-pill);
   background: var(--c-line);
 }
 
-.ktm-sheet__content {
+.ktm-sheet-content {
   display: flex;
   gap: 18px;
   margin-top: 10px;
 }
 
-.ktm-sheet__thumb {
+.ktm-sheet-thumb {
   width: 108px;
   height: 108px;
   flex: 0 0 108px;
-  border-radius: 18px;
+  border-radius: var(--r-lg);
   background: linear-gradient(135deg, #b86935, #9e5424);
   position: relative;
   overflow: hidden;
 }
 
-.ktm-sheet__thumb span {
+.ktm-sheet-thumb-tag {
   position: absolute;
   top: 12px;
   left: 12px;
@@ -48,13 +48,13 @@
   padding: 8px;
 }
 
-.ktm-sheet__info {
+.ktm-sheet-info {
   position: relative;
   flex: 1;
   min-width: 0;
 }
 
-.ktm-sheet__close {
+.ktm-sheet-close {
   position: absolute;
   top: -2px;
   right: -2px;
@@ -67,45 +67,45 @@
   font-size: 28px;
 }
 
-.ktm-sheet__info h2 {
+.ktm-sheet-title {
   margin: 0 0 10px;
   font-size: 25px;
   font-weight: 900;
 }
 
-.ktm-sheet__rating {
+.ktm-sheet-rating {
   margin: 0 0 9px;
   color: var(--c-accent);
   font-size: 18px;
   font-weight: 800;
 }
 
-.ktm-sheet__rating span {
+.ktm-sheet-rating-count {
   color: #666;
   font-weight: 500;
 }
 
-.ktm-sheet__meta {
+.ktm-sheet-meta {
   margin: 0 0 10px;
   font-size: 14px;
   color: var(--c-ink-3);
 }
 
-.ktm-sheet__tags {
+.ktm-sheet-tags {
   display: flex;
   gap: 8px;
 }
 
-.ktm-sheet__tags span {
+.ktm-sheet-tag {
   padding: 7px 12px;
-  border-radius: 999px;
+  border-radius: var(--r-pill);
   background: var(--c-tag-bg);
   font-size: 13px;
   font-weight: 700;
   color: #40454c;
 }
 
-.ktm-sheet__actions {
+.ktm-sheet-actions {
   position: absolute;
   left: 18px;
   right: 18px;
@@ -115,19 +115,19 @@
   gap: 14px;
 }
 
-.ktm-sheet__btn {
+.ktm-sheet-btn {
   height: 54px;
-  border-radius: 16px;
+  border-radius: var(--r-md);
   font-size: 17px;
   font-weight: 800;
 }
 
-.ktm-sheet__btn--outline {
+.ktm-sheet-btn-outline {
   border: 1px solid #d7dbe0;
   background: #fff;
 }
 
-.ktm-sheet__btn--primary {
+.ktm-sheet-btn-primary {
   border: 0;
   background: var(--c-accent);
 }

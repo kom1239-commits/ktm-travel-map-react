@@ -8,12 +8,12 @@ const BUTTONS = [
 
 export default function FloatingControls({ onAction }) {
   return (
-    <div className="ktm-floating">
+    <div className="ktm-controls">
       {BUTTONS.map((b) => (
         <button
           key={b.id}
           type="button"
-          className="ktm-floating__btn"
+          className="ktm-controls-btn"
           aria-label={b.label}
           onClick={() => onAction?.(b.id)}
         >
