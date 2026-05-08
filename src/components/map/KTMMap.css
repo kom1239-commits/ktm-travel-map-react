@@ -1,48 +1,21 @@
-/*
- * Static placeholder. Leaflet styles intentionally not loaded here.
- * Replace the body of this file when re-attaching Leaflet.
- */
-
 .ktm-map {
   position: fixed;
   inset: 0;
   z-index: 0;
-  /* warm beige fallback that reads as a terrain map */
-  background:
-    radial-gradient(ellipse at 30% 25%, rgba(195, 178, 144, 0.35) 0%, transparent 55%),
-    radial-gradient(ellipse at 75% 60%, rgba(180, 160, 120, 0.30) 0%, transparent 60%),
-    linear-gradient(180deg, #f0e8d4 0%, #ebe1c8 100%);
 }
 
-.ktm-map-svg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+/* Tooltip baseline (Leaflet default has white box + arrow). Keep it
+ * subtle so labels feel like part of the map, not popovers. */
+.leaflet-tooltip.ktm-marker-tooltip {
+  background: rgba(255, 255, 255, 0.92);
+  border: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  padding: 2px 6px;
+  border-radius: 6px;
+  white-space: nowrap;
 }
 
-.ktm-map-route {
-  fill: none;
-  stroke: #F4C400;
-  stroke-width: 4;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  opacity: 0.92;
-}
-
-.ktm-map-pin-selected {
-  filter: drop-shadow(0 0 0 rgba(244, 196, 0, 0));
-}
-
-.ktm-map-pin-label-en {
-  font-size: 10px;
-  font-weight: 700;
-  fill: var(--c-ink);
-  letter-spacing: -0.01em;
-}
-
-.ktm-map-pin-label-ko {
-  font-size: 9px;
-  font-weight: 500;
-  fill: var(--c-ink-3);
+.leaflet-tooltip.ktm-marker-tooltip::before,
+.leaflet-tooltip.ktm-marker-tooltip::after {
+  display: none;
 }
