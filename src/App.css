@@ -1,0 +1,7 @@
+.app {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  /* Bottom sheet height ≈ 280, place above bottom-nav */
+  --fab-bottom: 300px;
+}

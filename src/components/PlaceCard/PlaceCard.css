@@ -1,0 +1,126 @@
+.place-card {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 12px;
+  padding: 12px;
+  background: var(--c-surface);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-1);
+}
+
+.place-card__thumb {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  border-radius: var(--r-md);
+  background: linear-gradient(135deg, #c97444, #8a4a2c);
+}
+
+.place-card__bookmark {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--c-ink);
+}
+
+.place-card__body {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.place-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.place-card__title {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.place-card__close {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  color: var(--c-ink-3);
+  border-radius: 50%;
+}
+
+.place-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+}
+
+.place-card__row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--c-ink-2);
+}
+
+.place-card__muted {
+  color: var(--c-ink-3);
+}
+
+.place-card__tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 2px;
+}
+
+.place-card__tag {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--c-ink-2);
+  background: var(--c-bg);
+  padding: 3px 8px;
+  border-radius: var(--r-pill);
+}
+
+.place-card__actions {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 38px;
+  padding: 0 12px;
+  border-radius: var(--r-pill);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.btn--ghost {
+  background: var(--c-bg);
+  color: var(--c-ink-2);
+}
+
+.btn--primary {
+  background: var(--c-accent);
+  color: var(--c-accent-ink);
+}
+
+.btn:active {
+  transform: scale(0.99);
+}

@@ -1,0 +1,26 @@
+.bottom-sheet {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: var(--bottom-nav-h);
+  z-index: 420;
+  background: var(--c-bg);
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -8px 24px rgba(15, 17, 21, 0.08);
+  padding-bottom: 4px;
+}
+
+.bottom-sheet__grip {
+  width: 36px;
+  height: 4px;
+  background: var(--c-line);
+  border-radius: 2px;
+  margin: 8px auto 4px;
+}
+
+.bottom-sheet__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 8px 12px 12px;
+}

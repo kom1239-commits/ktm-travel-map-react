@@ -1,0 +1,32 @@
+:root {
+  --c-bg: #f5f6f8;
+  --c-surface: #ffffff;
+  --c-surface-2: #fafbfc;
+  --c-ink: #0f1115;
+  --c-ink-2: #3a3f47;
+  --c-ink-3: #7a8089;
+  --c-line: #e6e8ec;
+
+  --c-accent: #ffc23c;
+  --c-accent-ink: #1a1a1a;
+  --c-route: #f5b800;
+  --c-pin: #2c8f5a;
+  --c-pin-active: #0f1115;
+
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 18px;
+  --r-pill: 999px;
+
+  --shadow-1: 0 1px 2px rgba(15, 17, 21, 0.06), 0 4px 14px rgba(15, 17, 21, 0.08);
+  --shadow-2: 0 8px 24px rgba(15, 17, 21, 0.12);
+
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+
+  --header-h: 56px;
+  --bottom-nav-h: 64px;
+
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Pretendard', 'Apple SD Gothic Neo',
+    'Segoe UI', Roboto, sans-serif;
+}

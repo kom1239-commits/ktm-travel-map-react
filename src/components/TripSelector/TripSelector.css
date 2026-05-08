@@ -1,0 +1,46 @@
+.trip-selector {
+  position: absolute;
+  top: calc(var(--safe-top) + var(--header-h) + 8px);
+  left: 12px;
+  z-index: 400;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 10px 0 8px;
+  background: var(--c-surface);
+  border-radius: var(--r-pill);
+  box-shadow: var(--shadow-1);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--c-ink);
+  max-width: calc(100% - 24px);
+}
+
+.trip-selector__flag {
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  background: var(--c-accent);
+  color: var(--c-accent-ink);
+}
+
+.trip-selector__label {
+  color: var(--c-ink-3);
+  font-weight: 600;
+}
+
+.trip-selector__divider {
+  width: 1px;
+  height: 12px;
+  background: var(--c-line);
+}
+
+.trip-selector__title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 180px;
+}

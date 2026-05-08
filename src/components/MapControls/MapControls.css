@@ -1,0 +1,24 @@
+.map-controls {
+  position: absolute;
+  top: calc(var(--safe-top) + var(--header-h) + 8px);
+  right: 12px;
+  z-index: 400;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.map-controls__btn {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  background: var(--c-surface);
+  color: var(--c-ink);
+  border-radius: 50%;
+  box-shadow: var(--shadow-1);
+}
+
+.map-controls__btn:active {
+  background: var(--c-surface-2);
+}
