@@ -8,7 +8,9 @@
   grid-template-columns: repeat(5, 1fr);
   height: calc(var(--bottom-nav-h) + var(--safe-bottom));
   padding-bottom: var(--safe-bottom);
-  background: var(--c-surface);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-top: 1px solid var(--c-line);
 }
 
@@ -24,9 +26,5 @@
 }
 
 .bottom-nav__item.is-active {
-  color: var(--c-accent-ink);
-}
-
-.bottom-nav__item.is-active span {
-  color: var(--c-accent-ink);
+  color: var(--c-ink);
 }

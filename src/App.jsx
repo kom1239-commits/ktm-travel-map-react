@@ -6,7 +6,6 @@ import MapControls from './components/MapControls/MapControls.jsx';
 import FAB from './components/FAB/FAB.jsx';
 import BottomSheet from './components/BottomSheet/BottomSheet.jsx';
 import PlaceCard from './components/PlaceCard/PlaceCard.jsx';
-import TripCard from './components/TripCard/TripCard.jsx';
 import BottomNav from './components/BottomNav/BottomNav.jsx';
 import { trip, getPlaceById } from './data/trip.js';
 import './App.css';
@@ -15,13 +14,13 @@ const DEFAULT_PLACE_ID = 'charyn';
 
 export default function App() {
   const [selectedId, setSelectedId] = useState(DEFAULT_PLACE_ID);
-  const [activeTab, setActiveTab] = useState('home');
+  const [activeTab, setActiveTab] = useState('map');
 
   const selectedPlace = selectedId ? getPlaceById(selectedId) : null;
-  const showPlaceCard = Boolean(selectedPlace?.rating);
+  const showCard = Boolean(selectedPlace);
 
   return (
-    <div className="app">
+    <div className={`app ${showCard ? 'has-card' : ''}`}>
       <MapView selectedId={selectedId} onSelect={setSelectedId} />
 
       <Header />
@@ -31,13 +30,12 @@ export default function App() {
       <FAB />
 
       <BottomSheet>
-        {showPlaceCard && (
+        {showCard && (
           <PlaceCard
             place={selectedPlace}
             onClose={() => setSelectedId(null)}
           />
         )}
-        <TripCard trip={trip} />
       </BottomSheet>
 
       <BottomNav active={activeTab} onChange={setActiveTab} />

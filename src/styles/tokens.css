@@ -1,31 +1,34 @@
 :root {
-  --c-bg: #f5f6f8;
+  --c-bg: #eef1f3;
   --c-surface: #ffffff;
-  --c-surface-2: #fafbfc;
+  --c-surface-2: #f6f7f9;
   --c-ink: #0f1115;
   --c-ink-2: #3a3f47;
   --c-ink-3: #7a8089;
-  --c-line: #e6e8ec;
+  --c-line: #e3e6ea;
 
+  /* CTA accent kept for affordances; route now uses a navigation red */
   --c-accent: #ffc23c;
   --c-accent-ink: #1a1a1a;
-  --c-route: #f5b800;
-  --c-pin: #2c8f5a;
-  --c-pin-active: #0f1115;
 
-  --r-sm: 10px;
-  --r-md: 14px;
-  --r-lg: 18px;
+  --c-route: #d2453a;
+  --c-route-halo: #ffffff;
+  --c-pin: #1d2026;
+  --c-pin-active: #d2453a;
+
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
   --r-pill: 999px;
 
-  --shadow-1: 0 1px 2px rgba(15, 17, 21, 0.06), 0 4px 14px rgba(15, 17, 21, 0.08);
-  --shadow-2: 0 8px 24px rgba(15, 17, 21, 0.12);
+  --shadow-1: 0 1px 2px rgba(15, 17, 21, 0.08), 0 6px 16px rgba(15, 17, 21, 0.08);
+  --shadow-2: 0 10px 24px rgba(15, 17, 21, 0.14);
 
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
 
-  --header-h: 56px;
-  --bottom-nav-h: 64px;
+  --header-h: 52px;
+  --bottom-nav-h: 60px;
 
   --font-sans: -apple-system, BlinkMacSystemFont, 'Pretendard', 'Apple SD Gothic Neo',
     'Segoe UI', Roboto, sans-serif;

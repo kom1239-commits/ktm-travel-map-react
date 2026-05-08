@@ -2,6 +2,9 @@
   position: fixed;
   inset: 0;
   overflow: hidden;
-  /* Bottom sheet height ≈ 280, place above bottom-nav */
-  --fab-bottom: 300px;
+  --fab-bottom: calc(var(--bottom-nav-h) + var(--safe-bottom) + 16px);
+}
+
+.app.has-card {
+  --fab-bottom: calc(var(--bottom-nav-h) + var(--safe-bottom) + 84px);
 }

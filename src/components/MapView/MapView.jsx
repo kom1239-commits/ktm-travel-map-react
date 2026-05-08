@@ -1,37 +1,61 @@
-import { useMemo } from 'react';
-import { MapContainer, TileLayer, Marker, Polyline } from 'react-leaflet';
+import { useEffect, useMemo } from 'react';
+import {
+  MapContainer,
+  TileLayer,
+  Marker,
+  Polyline,
+  useMap,
+} from 'react-leaflet';
 import { trip, getRouteCoords } from '../../data/trip.js';
 import { createPlaceIcon } from './markerIcons.js';
 import './MapView.css';
 
-const ROUTE_STYLE = {
-  color: 'var(--c-route)',
-  weight: 5,
-  opacity: 0.95,
+const ROUTE_HALO = {
+  color: '#ffffff',
+  weight: 7,
+  opacity: 0.9,
   lineCap: 'round',
   lineJoin: 'round',
-  dashArray: '1 10',
 };
+
+const ROUTE_LINE = {
+  color: '#d2453a',
+  weight: 3.5,
+  opacity: 1,
+  lineCap: 'round',
+  lineJoin: 'round',
+};
+
+function FitToRoute({ coords }) {
+  const map = useMap();
+  useEffect(() => {
+    if (!coords?.length) return;
+    map.fitBounds(coords, { padding: [70, 70], animate: false });
+  }, [map, coords]);
+  return null;
+}
 
 export default function MapView({ selectedId, onSelect }) {
   const routeCoords = useMemo(() => getRouteCoords(), []);
-  const center = routeCoords[0];
 
   return (
     <div className="map-view">
       <MapContainer
-        center={center}
+        center={routeCoords[0]}
         zoom={8}
         zoomControl={false}
         attributionControl={false}
         className="map-view__container"
       >
+        {/* OpenTopoMap — terrain shading, contour lines, paths (Komoot-ish) */}
         <TileLayer
-          url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
-          subdomains={['a', 'b', 'c', 'd']}
-          maxZoom={19}
+          url="https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png"
+          subdomains={['a', 'b', 'c']}
+          maxZoom={17}
         />
-        <Polyline positions={routeCoords} pathOptions={ROUTE_STYLE} />
+        <FitToRoute coords={routeCoords} />
+        <Polyline positions={routeCoords} pathOptions={ROUTE_HALO} />
+        <Polyline positions={routeCoords} pathOptions={ROUTE_LINE} />
         {trip.places.map((place) => (
           <Marker
             key={place.id}
